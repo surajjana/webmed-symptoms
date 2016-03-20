@@ -40,7 +40,7 @@ for k in range(1,69):
 		data_id = l_s_id[i]
 		symptom_name = l_s_nm[i]
 		sheet.write(0,i,symptom_name,style)
-		workbook.save('/home/suraj/Desktop/demo/symptoms/'+a+'.xls')
+		workbook.save('/home/ubuntu/webmed/webmed-symptoms/'+a+'.xls')
 		print "Symptom ",i," : ", symptom_name
 		url_conditions = "http://symptoms.webmd.com/scapp/SymptomCheckerAPI.svc/conditions"
 		data_conditions = {"request":{"user":{"age":int(b),"gender":"M","zip":"","vid":"cfd87d3c-3f57-4a36-acdf-11553e89255f"},"locale":"us","maxconditions":200,"bodyparts":[{"id":k,"symptoms":[{"id":data_id,"qclss":[{"quals":[]}]}]}]}}
@@ -55,4 +55,4 @@ for k in range(1,69):
 			data2 = data["data"]["conditions"][j]["name"]
 			print j,". ",data2
 			sheet.write(j+1,i,data2)
-			workbook.save('/home/suraj/Desktop/demo/symptoms/'+a+'.xls')
+			workbook.save('/home/ubuntu/webmed/webmed-symptoms/'+a+'.xls')
